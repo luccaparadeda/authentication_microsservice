@@ -1,0 +1,12 @@
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:25.0.2
+    ports:
+      - 3006:8080
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    command:
+      - "start-dev"
+    volumes:
+      - ./local/keycloak/dev/:/opt/jboss/keycloak/standalone/data/ 
